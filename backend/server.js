@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://mern-crud-peach.vercel.app/",
+    origin: "https://mern-crud-peach.vercel.app",
     credentials: true,
   })
 );
