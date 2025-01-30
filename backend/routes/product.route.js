@@ -12,7 +12,7 @@ router.get("/", getProducts);
 
 router.post("/", createProduct);
 
-router.put("/:id", updateProduct);
+router.post("/:id", updateProduct);
 
 router.delete("/:id", deleteProduct);
 

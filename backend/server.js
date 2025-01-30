@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import { connectDB } from "./config/db.js";
 import ProductRoutes from "./routes/product.route.js";
 
@@ -7,9 +8,15 @@ dotenv.config();
 
 const PORT = process.env.PORT;
 
-const app = express();
 connectDB();
+const app = express();
 app.use(express.json());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 
 app.use("/api/products", ProductRoutes);
 

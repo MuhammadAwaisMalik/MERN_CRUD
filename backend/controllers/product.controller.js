@@ -4,7 +4,7 @@ import Product from "../models/product.model.js";
 export const getProducts = async (req, res) => {
   try {
     const products = await Product.find();
-    res.status(201).json({
+    res.status(200).json({
       success: true,
       data: products,
       message: "Data fetched Successfuly",
@@ -19,7 +19,7 @@ export const getSingleProducts = async (req, res) => {
   try {
     const { id } = req.params;
     const product = await Product.find({ id });
-    res.status(201).json({
+    res.status(200).json({
       success: true,
       data: product,
       message: "Data fetched Successfuly",
@@ -43,7 +43,7 @@ export const createProduct = async (req, res) => {
 
   try {
     await newProduct.save();
-    res.status(201).json({
+    res.status(200).json({
       success: true,
       data: newProduct,
       message: "Data Added Successfuly",
